@@ -8,24 +8,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".PracticeActivity" >
 
+    <EditText
+        android:id="@+id/solutionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottomOpTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:inputType="number" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="14dp"
         android:text="@string/practice_page_text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/bottomOpTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/operationTextView"
-        android:layout_below="@+id/operationTextView"
-        android:layout_marginTop="43dp"
-        android:text="@string/bottom_op_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="17dp"
         android:text="@string/top_op_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -44,8 +44,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/topOpTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         android:text="@string/operation_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/bottomOpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/operationTextView"
+        android:layout_below="@+id/operationTextView"
+        android:layout_marginTop="14dp"
+        android:text="@string/bottom_op_text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/solutionEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="@string/submit_button_text"
+        android:onClick="submitAnswer" />
+
+    <TextView
+        android:id="@+id/answerResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="@string/correct_answer_text" />
 
 </RelativeLayout>

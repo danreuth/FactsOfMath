@@ -4,16 +4,22 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
 
 public class PracticeActivity extends Activity {
-	FactGenerator factGenerator;
-	TextView topOperand;
-	TextView bottomOperand;
-	TextView operator;
+	private FactGenerator factGenerator;
+	private TextView topOperand;
+	private TextView bottomOperand;
+	private TextView operator;
+	private EditText solution;
+	private TextView answerMessage;
+	private Button submitButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +32,37 @@ public class PracticeActivity extends Activity {
 		topOperand = (TextView) findViewById(R.id.topOpTextView);
 		bottomOperand = (TextView) findViewById(R.id.bottomOpTextView);
 		operator = (TextView) findViewById(R.id.operationTextView);
+		answerMessage = (TextView) findViewById(R.id.answerResultTextView);
+		answerMessage.setVisibility(TextView.INVISIBLE);
+		solution = (EditText) findViewById(R.id.solutionEditText);
+		submitButton = (Button) findViewById(R.id.submitButton);
 		topOperand.setText(factGenerator.getFirstOperand());
 		bottomOperand.setText(factGenerator.getSecondOperand());
 		operator.setText(factGenerator.getOperator());
 	}
 
+	public void submitAnswer(View view) {
+		if (submitButton.getText().equals(getString(R.string.submit_button_text))) {
+			String input = solution.getText().toString();
+			if (input.equals(factGenerator.getSolution())) {
+				answerMessage.setText(getString(R.string.correct_answer_text));
+				answerMessage.setVisibility(TextView.VISIBLE);
+				submitButton.setText(getString(R.string.go_again_button_text));
+			} else {
+				answerMessage.setText(getString(R.string.wrong_answer_text));
+				answerMessage.setVisibility(TextView.VISIBLE);
+				solution.setText("");
+			}
+		} else {
+			factGenerator.generateNewFact();
+			answerMessage.setVisibility(TextView.INVISIBLE);
+			topOperand.setText(factGenerator.getFirstOperand());
+			bottomOperand.setText(factGenerator.getSecondOperand());
+			operator.setText(factGenerator.getOperator());
+			submitButton.setText(getString(R.string.submit_button_text));
+			solution.setText("");
+		}
+	}
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */

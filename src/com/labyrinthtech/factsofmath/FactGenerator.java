@@ -82,8 +82,8 @@ public class FactGenerator {
 		return Integer.toString(secondOperand);
 	}
 
-	public int getSolution() {
-		return solution;
+	public String getSolution() {
+		return Integer.toString(solution);
 	}
 	
 	public String getOperator() {
