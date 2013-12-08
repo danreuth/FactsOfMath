@@ -17,10 +17,16 @@ public class FactGenerator {
 		random = new Random();
 	}
 	
-	public void generateNewFact() {
+	public MathFact generateNewFact() {
 		generateOperator();
 		generateOperands();
 		calculateSolution();
+		MathFact returnResult = new MathFact();
+		returnResult.firstOperand = getFirstOperand();;
+		returnResult.secondOperand = getSecondOperand();
+		returnResult.operator = getOperator();
+		returnResult.solution = getSolution();
+		return returnResult;
 		
 	}
 
@@ -74,19 +80,19 @@ public class FactGenerator {
 		
 	}
 
-	public String getFirstOperand() {
+	private String getFirstOperand() {
 		return Integer.toString(firstOperand);
 	}
 
-	public String getSecondOperand() {
+	private String getSecondOperand() {
 		return Integer.toString(secondOperand);
 	}
 
-	public String getSolution() {
+	private String getSolution() {
 		return Integer.toString(solution);
 	}
 	
-	public String getOperator() {
+	private String getOperator() {
 		String returnResult = "+";
 		switch(operator) {
 			case ADDITION:

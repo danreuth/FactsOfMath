@@ -14,6 +14,7 @@ import android.os.Build;
 
 public class PracticeActivity extends Activity {
 	private FactGenerator factGenerator;
+	private MathFact fact;
 	private TextView topOperand;
 	private TextView bottomOperand;
 	private TextView operator;
@@ -28,7 +29,7 @@ public class PracticeActivity extends Activity {
 		setContentView(R.layout.activity_practice);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		factGenerator.generateNewFact();
+		
 		topOperand = (TextView) findViewById(R.id.topOpTextView);
 		bottomOperand = (TextView) findViewById(R.id.bottomOpTextView);
 		operator = (TextView) findViewById(R.id.operationTextView);
@@ -36,15 +37,16 @@ public class PracticeActivity extends Activity {
 		answerMessage.setVisibility(TextView.INVISIBLE);
 		solution = (EditText) findViewById(R.id.solutionEditText);
 		submitButton = (Button) findViewById(R.id.submitButton);
-		topOperand.setText(factGenerator.getFirstOperand());
-		bottomOperand.setText(factGenerator.getSecondOperand());
-		operator.setText(factGenerator.getOperator());
+		fact = factGenerator.generateNewFact();
+		topOperand.setText(fact.firstOperand);
+		bottomOperand.setText(fact.secondOperand);
+		operator.setText(fact.operator);
 	}
 
 	public void submitAnswer(View view) {
 		if (submitButton.getText().equals(getString(R.string.submit_button_text))) {
 			String input = solution.getText().toString();
-			if (input.equals(factGenerator.getSolution())) {
+			if (input.equals(fact.solution)) {
 				answerMessage.setText(getString(R.string.correct_answer_text));
 				answerMessage.setVisibility(TextView.VISIBLE);
 				submitButton.setText(getString(R.string.go_again_button_text));
@@ -54,11 +56,11 @@ public class PracticeActivity extends Activity {
 				solution.setText("");
 			}
 		} else {
-			factGenerator.generateNewFact();
+			fact = factGenerator.generateNewFact();
 			answerMessage.setVisibility(TextView.INVISIBLE);
-			topOperand.setText(factGenerator.getFirstOperand());
-			bottomOperand.setText(factGenerator.getSecondOperand());
-			operator.setText(factGenerator.getOperator());
+			topOperand.setText(fact.firstOperand);
+			bottomOperand.setText(fact.secondOperand);
+			operator.setText(fact.operator);
 			submitButton.setText(getString(R.string.submit_button_text));
 			solution.setText("");
 		}
