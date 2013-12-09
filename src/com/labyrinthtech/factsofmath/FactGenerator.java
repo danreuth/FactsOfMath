@@ -6,14 +6,10 @@ public class FactGenerator {
 	private int firstOperand;
 	private int secondOperand;
 	private int solution;
-	private Operator operator;
+	private String operator;
 	private Random random;
 	
 	FactGenerator() {
-		firstOperand = 5;
-		secondOperand = 10;
-		solution = 15;
-		operator = Operator.ADDITION;
 		random = new Random();
 	}
 	
@@ -21,39 +17,35 @@ public class FactGenerator {
 		generateOperator();
 		generateOperands();
 		calculateSolution();
+		return fillMathFact();
+	}
+
+	private MathFact fillMathFact() {
 		MathFact returnResult = new MathFact();
-		returnResult.firstOperand = getFirstOperand();;
-		returnResult.secondOperand = getSecondOperand();
-		returnResult.operator = getOperator();
-		returnResult.solution = getSolution();
+		returnResult.firstOperand = Integer.toString(firstOperand);
+		returnResult.secondOperand = Integer.toString(secondOperand);
+		returnResult.operator = operator;
+		returnResult.solution = Integer.toString(solution);
 		return returnResult;
-		
 	}
-
+	
 	private void calculateSolution() {
-		switch(operator) {
-			case ADDITION:
-				solution = firstOperand + secondOperand;
-				break;
-			case SUBTRACTION:
-				solution = firstOperand - secondOperand;
-				break;
-			case MULTIPLICATION:
-				solution = firstOperand * secondOperand;
-				break;
-			case DIVISION:
-				solution = firstOperand / secondOperand;
-				break;
+		if(operator.equals(Constants.ADDITON)) {
+			solution = firstOperand + secondOperand;
+		} else if(operator.equals(Constants.SUBTRACTION)) {
+			solution = firstOperand - secondOperand;
+		} else if (operator.equals(Constants.MULTIPLICATION)) {
+			solution = firstOperand * secondOperand;
+		} else {
+			solution = firstOperand / secondOperand;
 		}
-		
 	}
-
 	
 	private void generateOperands() {
 		firstOperand = random.nextInt(Constants.UPPER_FACT_LIMIT) + 1;
-		if(operator == Operator.ADDITION || operator == Operator.MULTIPLICATION) {
+		if(operator.equals(Constants.ADDITON) || operator.equals(Constants.MULTIPLICATION)) {
 			secondOperand = random.nextInt(Constants.UPPER_FACT_LIMIT) + 1;
-		} else if(operator == Operator.SUBTRACTION) {
+		} else if(operator.equals(Constants.SUBTRACTION)) {
 			secondOperand = random.nextInt(firstOperand) + 1;
 		} else {
 			secondOperand = random.nextInt(Constants.UPPER_FACT_LIMIT) + 1;
@@ -65,57 +57,17 @@ public class FactGenerator {
 		int op = random.nextInt(Constants.NUMBER_OF_OPERATORS);
 		switch(op) {
 			case 0:
-				operator = Operator.ADDITION;
+				operator = Constants.ADDITON;
 				break;
 			case 1:
-				operator = Operator.SUBTRACTION;
+				operator = Constants.SUBTRACTION;
 				break;
 			case 2:
-				operator = Operator.MULTIPLICATION;
+				operator = Constants.MULTIPLICATION;
 				break;
 			case 3:
-				operator = Operator.DIVISION;
+				operator = Constants.DIVISION;
 				break;
 		}
-		
 	}
-
-	private String getFirstOperand() {
-		return Integer.toString(firstOperand);
-	}
-
-	private String getSecondOperand() {
-		return Integer.toString(secondOperand);
-	}
-
-	private String getSolution() {
-		return Integer.toString(solution);
-	}
-	
-	private String getOperator() {
-		String returnResult = "+";
-		switch(operator) {
-			case ADDITION:
-				returnResult = "+";
-				break;
-			case SUBTRACTION:
-				returnResult = "-";
-				break;
-			case MULTIPLICATION:
-				returnResult = "*";
-				break;
-			case DIVISION:
-				returnResult = "\u00F7";
-				break;
-				
-		
-		}
-		return returnResult;
-		
-	}
-
-	
-	
-	
-
 }
