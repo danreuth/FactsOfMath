@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -18,7 +17,7 @@ public class PracticeActivity extends Activity {
 	private TextView topOperand;
 	private TextView bottomOperand;
 	private TextView operator;
-	private EditText solution;
+	private TextView solution;
 	private TextView answerMessage;
 	private Button submitButton;
 	
@@ -35,7 +34,7 @@ public class PracticeActivity extends Activity {
 		operator = (TextView) findViewById(R.id.operationTextView);
 		answerMessage = (TextView) findViewById(R.id.answerResultTextView);
 		answerMessage.setVisibility(TextView.INVISIBLE);
-		solution = (EditText) findViewById(R.id.solutionEditText);
+		solution = (TextView) findViewById(R.id.solutionEditText);
 		submitButton = (Button) findViewById(R.id.submitButton);
 		fact = factGenerator.generateNewFact();
 		topOperand.setText(fact.firstOperand);
@@ -43,6 +42,9 @@ public class PracticeActivity extends Activity {
 		operator.setText(fact.operator);
 	}
 
+	// Set listener for number buttons
+	// Set listener for erase button
+	// Refactor submitAnswer
 	public void submitAnswer(View view) {
 		if (submitButton.getText().equals(getString(R.string.submit_button_text))) {
 			String input = solution.getText().toString();
