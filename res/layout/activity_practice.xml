@@ -9,7 +9,8 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/practice_page_text" />
+        android:text="@string/practice_page_text"
+        android:textSize="35sp"  />
     <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,35 +20,36 @@
 	        android:id="@+id/topOpTextView"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/top_op_text" />
+	        android:text="@string/top_op_text"
+	        android:textSize="25sp" />
 	
 	    <TextView
 	        android:id="@+id/operationTextView"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/operation_text" />
+	        android:text="@string/operation_text"
+	        android:textSize="25sp" />
 	
 	    <TextView
 	        android:id="@+id/bottomOpTextView"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/bottom_op_text" />
+	        android:text="@string/bottom_op_text"
+	        android:textSize="25sp" />
 	    <!-- TODO Continue to fix this.   Maybe change id.  Figure out how to make static width. -->
 	    <TextView
 	        android:id="@+id/solutionEditText"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"  />
+	        android:layout_height="wrap_content"
+	        android:width="100sp"
+	        android:textSize="25sp"  />
 		
 	    
 	</LinearLayout>
 
     
 
-    <TextView
-        android:id="@+id/answerResultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/correct_answer_text" />
+    
 	<LinearLayout
 	    android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,19 +58,19 @@
 	        android:id="@+id/zeroButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/zero_button_text" />
 	    <Button
 	        android:id="@+id/oneButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/one_button_text" />
 	    <Button
 	        android:id="@+id/twoButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/two_button_text" />
 	</LinearLayout>
 	<LinearLayout
@@ -79,19 +81,19 @@
 	        android:id="@+id/threeButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/three_button_text" />
 	    <Button
 	        android:id="@+id/fourButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/four_button_text" />
 	    <Button
 	        android:id="@+id/fiveButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/five_button_text" />
 	</LinearLayout>
 	<LinearLayout
@@ -102,19 +104,19 @@
 	        android:id="@+id/sixButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/six_button_text" />
 	    <Button
 	        android:id="@+id/sevenButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/seven_button_text" />
 	    <Button
 	        android:id="@+id/eightButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/eight_button_text" />
 	    
 	</LinearLayout>
@@ -126,21 +128,21 @@
 	        android:id="@+id/nineButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/nine_button_text" />
-	    <Button
-        	android:id="@+id/submitButton"
-        	android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:onClick="submitAnswer"
-        	android:text="@string/submit_button_text" />
+	    
     	<Button
 	        android:id="@+id/eraseButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="submitAnswer"
+	        android:onClick="numberEntry"
 	        android:text="@string/erase_button_text" />
 	    
     </LinearLayout>
-    
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitAnswer"
+        android:text="@string/submit_button_text" />
 </LinearLayout>
