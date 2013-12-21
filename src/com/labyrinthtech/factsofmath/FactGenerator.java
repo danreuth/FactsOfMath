@@ -1,7 +1,7 @@
 package com.labyrinthtech.factsofmath;
 
 import java.util.Random;
-// Test comment more
+// Test comment more more
 public class FactGenerator {
 	private int firstOperand;
 	private int secondOperand;
