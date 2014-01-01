@@ -1,4 +1,4 @@
-package com.labyrinthtech.factsofmath;
+package com.labyrinthtech.factsofmath.models;
 
 public class MathFact {
 	public String firstOperand;

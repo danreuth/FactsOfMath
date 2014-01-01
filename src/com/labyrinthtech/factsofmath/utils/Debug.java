@@ -1,4 +1,4 @@
-package com.labyrinthtech.factsofmath;
+package com.labyrinthtech.factsofmath.utils;
 
 import android.util.Log;
 

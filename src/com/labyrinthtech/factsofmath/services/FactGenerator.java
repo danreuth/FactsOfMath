@@ -1,6 +1,9 @@
-package com.labyrinthtech.factsofmath;
+package com.labyrinthtech.factsofmath.services;
 
 import java.util.Random;
+
+import com.labyrinthtech.factsofmath.models.MathFact;
+import com.labyrinthtech.factsofmath.utils.Constants;
 // Test comment more more
 public class FactGenerator {
 	private int firstOperand;
@@ -9,7 +12,7 @@ public class FactGenerator {
 	private String operator;
 	private Random random;
 	
-	FactGenerator() {
+	public FactGenerator() {
 		random = new Random();
 	}
 	

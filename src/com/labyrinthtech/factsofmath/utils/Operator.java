@@ -1,4 +1,4 @@
-package com.labyrinthtech.factsofmath;
+package com.labyrinthtech.factsofmath.utils;
 
 public enum Operator {
 	ADDITION,

@@ -58,19 +58,16 @@
 	        android:id="@+id/zeroButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/zero_button_text" />
 	    <Button
 	        android:id="@+id/oneButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/one_button_text" />
 	    <Button
 	        android:id="@+id/twoButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/two_button_text" />
 	</LinearLayout>
 	<LinearLayout
@@ -81,19 +78,16 @@
 	        android:id="@+id/threeButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/three_button_text" />
 	    <Button
 	        android:id="@+id/fourButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/four_button_text" />
 	    <Button
 	        android:id="@+id/fiveButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/five_button_text" />
 	</LinearLayout>
 	<LinearLayout
@@ -104,19 +98,16 @@
 	        android:id="@+id/sixButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/six_button_text" />
 	    <Button
 	        android:id="@+id/sevenButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/seven_button_text" />
 	    <Button
 	        android:id="@+id/eightButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/eight_button_text" />
 	    
 	</LinearLayout>
@@ -128,14 +119,12 @@
 	        android:id="@+id/nineButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/nine_button_text" />
 	    
     	<Button
 	        android:id="@+id/eraseButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="numberEntry"
 	        android:text="@string/erase_button_text" />
 	    
     </LinearLayout>
@@ -143,6 +132,5 @@
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="submitAnswer"
         android:text="@string/submit_button_text" />
 </LinearLayout>
